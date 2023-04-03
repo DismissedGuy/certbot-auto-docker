@@ -49,5 +49,5 @@ fi
 echo "** Running with options: ${certbot_args[*]}"
 
 ## Actual renewal
-/opt/certbot/bin/certbot certonly "${certbot_args[*]}" 2>&1 | log
+/opt/certbot/bin/certbot certonly ${certbot_args[*]} 2>&1 | log
 echo
