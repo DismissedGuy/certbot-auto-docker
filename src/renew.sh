@@ -46,7 +46,14 @@ if [ ! -z "${STAGING}" ] && [ "${STAGING,,}" != "false" ]; then
   certbot_args+=("--test-cert")
 fi
 
-echo "** Running with options: ${certbot_args[*]}"
+export IFS=";"
+for pair in $EXTRA_ARGS; do
+  opt_str="--${pair//=/ }"
+  certbot_args+=("${opt_str,,}")
+done
+unset IFS
+
+echo "** Running with options: ${certbot_args[*]}" | log
 
 ## Actual renewal
 /opt/certbot/bin/certbot certonly ${certbot_args[*]} 2>&1 | log
