@@ -1,0 +1,13 @@
+version: "3"
+services:
+  certbot-auto:
+    build: .
+    environment:
+      - EMAIL: test@domain.com
+      - DNS_PROVIDER: cloudflare
+      - DOMAIN: my-domain.com
+      - STAGING: true
+    volumes:
+      - "./dns-creds:/etc/dns-creds"
+      - "./letsencrypt:/etc/letsencrypt"
+    restart: unless-stopped
