@@ -10,4 +10,4 @@ COPY src/crontab /var/spool/cron/crontabs/root
 COPY src/renew.sh /renew.sh
 
 ENTRYPOINT ["crond", "-f"]
-CMD -L /dev/stdout
+CMD ["-L", "/dev/stdout"]
