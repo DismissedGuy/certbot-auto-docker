@@ -14,7 +14,7 @@ Adding support for other providers is quite simple, so open an issue if you'd li
 ## Installation
 1. Clone this repository
 2. Modify `docker-compose.yml` for your configuration.
-    1. You must set a domain name, your DNS provider and a contact email (for Let's Encrypt)
+    1. You must set at least one domain name (separated by `;`), your DNS provider and a contact email (for Let's Encrypt).
     2. After you have verified that everything works, unset the STAGING variable to generate a certificate from the production environment.
 3. Modify your DNS provider's config file in `dns-creds/` for authentication.
     1. This is usually an API key, account credentials or something similar.

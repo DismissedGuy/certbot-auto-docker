@@ -5,7 +5,7 @@ services:
     environment:
       - EMAIL=test@domain.com
       - DNS_PROVIDER=cloudflare
-      - DOMAIN=my-domain.com
+      - DOMAINS=my-domain.com;sub.my-domain.com;other-domain.com
       - STAGING=true
       - EXTRA_ARGS=
     volumes:
